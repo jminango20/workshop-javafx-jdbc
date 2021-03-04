@@ -12,7 +12,15 @@ public class DepartmentService {
 	
 	public List<Department> findAll(){
 		return dao.findAll();
-
+	}
+	
+	public void saveOrUpdate(Department obj) {
+		if(obj.getId()==null) {//inserindo um novo departamento
+			dao.insert(obj); //inseri no DB
+		}
+		else {
+			dao.update(obj); //atualiza
+		}
 	}
 
 }
