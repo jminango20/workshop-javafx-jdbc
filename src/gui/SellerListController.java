@@ -120,7 +120,7 @@ public class SellerListController implements Initializable, DataChangeListener {
 
 			SellerFormController controller = loader.getController();
 			controller.setSeller(obj);
-			controller.setService(new SellerService(), new DepartmentService());// injecao de dependencia
+			controller.setServices(new SellerService(), new DepartmentService());// injecao de dependencia
 			controller.loadAssociatedObjects();
 			controller.subscribeDataChangeListener(this);
 			controller.updateFormData();
